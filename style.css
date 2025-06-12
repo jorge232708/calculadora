@@ -1,0 +1,167 @@
+:root {
+    --black: #000000;
+    --fluorescent-green: #39FF14;
+    --dark-grey: #333333;
+    --light-grey: #666666;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--black);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--fluorescent-green); /* Color general de texto para el cuerpo */
+}
+
+.calculator {
+    background-color: var(--dark-grey);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 20, 0.5); /* Sombra que simula el brillo fluorescente */
+    overflow: hidden;
+    width: 320px;
+    padding: 20px;
+    border: 2px solid var(--fluorescent-green); /* Borde que realza el diseño */
+}
+
+.display {
+    background-color: var(--black);
+    color: var(--fluorescent-green);
+    font-size: 3em;
+    padding: 20px;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 255, 20, 0.7); /* Sombra interna para el display */
+    word-wrap: break-word;
+    min-height: 60px; /* Asegura un alto mínimo */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.button {
+    background-color: var(--fluorescent-green);
+    color: var(--black);
+    border: none;
+    padding: 20px;
+    font-size: 1.8em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 20, 0.4); /* Sombra base para los botones */
+}
+
+.button:hover {
+    background-color: #5aff3a; /* Un verde un poco más claro al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 20, 0.8); /* Sombra más intensa al pasar el ratón */
+}
+
+.button:active {
+    background-color: #24d100; /* Un verde más oscuro al hacer clic */
+    transform: translateY(0);
+    box-shadow: 0 0 5px rgba(0, 255, 20, 0.9); /* Sombra más pequeña al hacer clic */
+}
+
+.clear {
+    grid-column: span 1;
+    background-color: #ff3333; /* Rojo para el botón de borrar */
+    color: var(--black);
+}
+
+.clear:hover {
+    background-color: #ff6666;
+}
+
+.clear:active {
+    background-color: #cc0000;
+}
+
+.operator {
+    background-color: #00b300; /* Un verde ligeramente diferente para operadores */
+    color: var(--black);
+}
+
+.operator:hover {
+    background-color: #00e600;
+}
+
+.operator:active {
+    background-color: #008000;
+}
+
+.equals {
+    background-color: #00cc00; /* Un verde más intenso para el igual */
+    grid-column: span 2; /* Ocupa dos columnas */
+    color: var(--black);
+}
+
+.equals:hover {
+    background-color: #00e600;
+}
+
+.equals:active {
+    background-color: #009900;
+}
+
+.zero {
+    grid-column: span 2; /* Ocupa dos columnas */
+}
+
+.backspace {
+    background-color: #ff9900; /* Naranja para el botón de retroceso */
+    color: var(--black);
+}
+
+.backspace:hover {
+    background-color: #ffb333;
+}
+
+.backspace:active {
+    background-color: #cc7a00;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 400px) {
+    .calculator {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .display {
+        font-size: 2.5em;
+        padding: 15px;
+    }
+
+    .button {
+        padding: 15px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 320px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .display {
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    .button {
+        padding: 12px;
+        font-size: 1.3em;
+    }
+}
